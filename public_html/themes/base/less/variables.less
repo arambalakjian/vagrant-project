@@ -1,0 +1,62 @@
+//
+// variables.less by Carbon Crayon 
+//
+// Add to and override bootstraps custom variables
+//
+// --------------------------------------------------
+
+
+//import base bootstrap variables
+@import "bootstrap/variables.less";
+
+
+
+
+
+// Global values
+// --------------------------------------------------
+
+// Brand colors
+// -------------------------
+
+@brand-primary:         #428bca;
+@brand-success:         #5cb85c;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
+@brand-info:            #5bc0de;
+
+// Scaffolding
+// -------------------------
+@body-bg:               #fff;
+
+// Text Colors
+// -------------------------
+@text-color:            @gray-dark;
+
+@link-color:            @brand-primary;
+@link-hover-color:      darken(@link-color, 15%);
+
+// Typography
+// -------------------------
+
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          14px;
+@font-size-large:         ceil(@font-size-base * 1.25); // ~18px
+@font-size-small:         ceil(@font-size-base * 0.85); // ~12px
+
+@line-height-base:        1.428571429; // 20/14
+@line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
+
+@headings-font-family:    @font-family-base;
+@headings-font-weight:    500;
+@headings-line-height:    1.1;
+
+
+// Sticky Footer
+// -------------------------
+@footer-height: 		18em;
+

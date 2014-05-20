@@ -1,0 +1,20 @@
+---
+Name: mysite
+After: 'framework/*','cms/*'
+---
+# YAML configuration for SilverStripe
+# See http://doc.silverstripe.org/framework/en/topics/configuration
+# Caution: Indentation through two spaces, not tabs
+SSViewer:
+  theme: 'base'
+SiteConfig:
+  extensions:
+    - CustomSiteConfig
+SiteTree:
+  nested_urls: true
+GD:
+  default_quality: 95
+MySQLDataBase:
+  connection_charset: 'utf8'
+FullTextSearchable:
+  enable: true

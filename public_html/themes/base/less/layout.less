@@ -1,0 +1,197 @@
+// -----------------------------
+//
+// layout.less by Carbon Crayon
+// 
+// Primary file to set site specific layout styles
+// 
+// CONTENTS 
+// 
+// - GENERAL LAYOUT 
+//   - Base 
+//   - Header 
+//   - Sidebar 
+//   - Main Content 
+//   - Footer 
+// 
+// - PAGE LAYOUTS 
+//   - Page.ss 
+//   - HomePage.ss 
+//   - ContactPage.ss 
+// 
+// 
+// - IE TWEAKS
+
+
+// --------------------
+//
+//	GENERAL LAYOUT
+//
+// ---------------------/
+
+// Base 
+// --------------------/
+html {
+	font-size: 62.5%;
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding-top: 70px; //padding for fixed nav
+	background: @body-bg;
+	min-width: 240px;
+	-webkit-text-size-adjust: none;
+	font-family: Arial, Helvetica, sans-serif;
+	.font-size(@font-size-base);
+}
+
+// Header 
+// --------------------/
+.header {
+	.navbar-brand {
+		max-width: 70%;
+	}
+	.nav {
+		a {
+			i {
+				float: right;
+			}
+
+			&:hover {
+				background: @navbar-default-border;
+			}
+		}
+	}
+	form#SearchForm_SearchForm {
+		.navbar-form;
+		width: auto;
+		border-color: darken(@navbar-default-bg, 7%);
+
+		.action {
+			display: inline-block;
+			.btn;
+			.btn-default;
+		}	
+	}
+}
+
+// Sidebar 
+// --------------------/
+.sidebar {
+	.make-sm-column(3);
+
+	.secondary-nav {
+		ul {
+			list-style-type: none;
+			margin: 10px 0;
+			padding: 0;
+
+			li {
+				margin: 5px 0;
+
+				a {
+					display: block;
+					padding: 10px 20px;
+					text-decoration: none;
+
+					&.current {
+						background-color: lighten(@gray-lighter, 2%);
+						border-left: 5px solid @brand-primary;
+						padding-left: 15px;
+					}
+					&:hover {
+						background-color: @gray-lighter;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Main Content 
+// --------------------/
+.content-wrapper {
+	.make-sm-column(9);
+	margin: 0 0 20px;
+}
+
+// Footer 
+// --------------------/
+.footer {
+	background: lighten(@brand-primary, 15%);
+	border-top: 1px solid lighten(@brand-primary, 5%);
+	padding: 20px 0 0;
+	overflow: hidden;
+
+	.upper {
+		.make-row();
+
+		.content-block {
+			.make-sm-column(3);
+		}
+	}
+
+	.lower {
+		margin-top: 10px;
+		padding: 20px 0;
+		background: lighten(@brand-primary, 10%);
+
+		.lower-content {
+			.make-row();
+		}
+	}
+
+	.copyright {
+		.make-xs-column(6);
+		.make-md-column(5);
+		p {
+			margin: 0;
+		}
+	}
+	.credit {
+		.make-xs-column(6);
+		.make-md-column(5);
+		.make-md-column-offset(2);
+		p {
+			margin: 0;
+			text-align: right;
+		}
+	}
+}
+
+
+
+// --------------------
+//
+//	PAGE SPECIFIC
+//
+// ---------------------/
+
+// homepage.ss 
+// --------------------/
+.HomePage {
+	.content-wrapper {
+		.make-sm-column(12);
+	}
+}
+
+// contactpage.ss 
+// --------------------/
+.ContactPage {
+	.content-wrapper {
+		.make-sm-column(8);
+		.make-sm-column-offset(2);
+	}
+	#contact-response {
+		display: none;
+		.well;
+	}
+}
+
+// security.ss 
+// --------------------/
+.Security {
+	.content-wrapper {
+		.make-sm-column(8);
+		.make-sm-column-offset(2);
+	}
+}

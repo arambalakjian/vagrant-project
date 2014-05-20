@@ -1,0 +1,26 @@
+{
+	"name": "carboncrayon/base-ss",
+	"description": "Base Carbon Crayon SilverStripe",
+	"authors": [
+		{
+			"name": "Carbon Crayon",
+			"homepage": "http://carboncrayon.com"
+		}
+	],
+	"repositories" : [
+        {
+        "type": "vcs",
+        "url": "git@github.com:carboncrayon/silverstripe-utils.git"
+        }
+	],	
+	"require": {
+		"php": ">=5.3.2",
+		"silverstripe/framework": "3.1.1",
+		"silverstripe/cms": "3.1.1",
+		"carboncrayon/silverstripe-utils": "master-dev",
+		"silverstripe/dataobjectaspage": "master-dev",
+		"colymba/gridfield-bulk-editing-tools": "master-dev",
+		"ajshort/silverstripe-gridfieldextensions" : "master-dev",
+		"silverstripe/googlesitemaps" : "dev-master"
+	}
+}
