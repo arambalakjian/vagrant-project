@@ -10,7 +10,8 @@
 /public_html/googlesitemaps
 /public_html/gridfield-bulk-editing-tools
 /public_html/gridfieldextensions
-/public_html/sulverstripe-utils
+/public_html/dataobjectaspage
+/public_html/silverstripe-utils
 
 # Ignore these files in Assets #
 /public_html/assets/*.jpg
