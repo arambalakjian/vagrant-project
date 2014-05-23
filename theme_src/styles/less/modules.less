@@ -1,0 +1,20 @@
+// -----------------------------
+//
+// Modules.less by Carbon Crayon
+// 
+// Reusable, modular parts of the design. They are the callouts, the
+// sidebar sections, the product lists and so on.
+// 
+// Modules are prefixed by the name of the module.
+// 
+// -----------------------------
+
+// Navbar modules
+// -----------------------------
+.navbar-brand-constrained:extend(.navbar-brand){
+	max-width: 70%;
+
+	@media @query-sm-min {
+		max-width: none;
+	}
+}

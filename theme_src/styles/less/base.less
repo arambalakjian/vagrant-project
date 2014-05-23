@@ -1,0 +1,292 @@
+// -----------------------------
+//
+// Base.less by Carbon Crayon
+// 
+// Almost exclusively single element selectors but could include 
+// attribute selectors, pseudo-class selectors, child selectors or 
+// sibling selectors.
+// 
+// Essentially, a base style says that wherever this element is on 
+// the page, it should look like this.
+//
+// CONTENTS
+//
+// - Form Styles
+// - Error Messages
+// - Security Page
+// - Print Styles
+//
+// -----------------------------
+
+:root{
+    .background-color-grey(50);
+    border: 1px solid red;
+}
+html,
+body{
+    overflow-x: hidden;
+}
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding-top: 70px; // Padding for fixed nav
+    background-color: @body-bg;
+    min-width: 240px;
+    -webkit-text-size-adjust: none;
+}
+p{
+}
+a{
+    &:link{}
+    &:visited{}
+    &:hover{}
+    &:focus{}
+    &:active{}
+
+    &:target{}
+}
+
+h1{
+    .font-size-responsive((@font-size-h1 - 19), 2);
+}
+
+h2{
+    .font-size-responsive((@font-size-h2 - 19), 2);
+}
+
+h3{
+    .font-size-responsive((@font-size-h3 - 19), 2);
+}
+
+h4{
+    .font-size-responsive((@font-size-h4 - 19), 2);
+}
+
+h5{
+    .font-size-responsive((@font-size-h5 - 19), 2);
+}
+
+h6{
+    .font-size-responsive((@font-size-h6 - 19), 2);
+}
+
+// FORM STYLES 
+// ------------------------------/
+
+form {
+    width: 100%;
+
+    fieldset {
+        width: 100%;
+    }
+
+    label {
+        margin-top: 3px;
+        display: block;
+    }
+
+    .middleColumn {
+        clear: both;
+        width: 100%;
+        margin-top: 5px;
+
+        ul {
+
+            li {
+                list-style-type: none;
+                padding: 5px 0;
+
+                label {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    div.field,
+    p.field{
+        width: 100%;
+        float: left;
+        margin-bottom: 20px;
+        .box-sizing(border-box);
+    }
+
+    input.text,
+    textarea,
+    .textajaxuniquetext,
+    select {
+        width: 100%;
+        padding: 6px 10px;
+        border: 1px solid @input-border;
+        .box-sizing(border-box);
+        .border-radius(@input-border-radius);
+        .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    }
+
+    /* focus highlight where supported */
+    input.text,
+    textarea {
+        @transition: border linear .2s, box-shadow linear .2s;
+        .transition(@transition);
+
+        &:focus {
+          border-color: rgba(82,168,236,.8);
+          outline: 0;
+          outline: thin dotted \9; /* IE6-9 */
+          .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
+        }
+    }
+
+    /* focus error highlight */
+    input.text.error,
+    textarea.error {
+        border-color: rgba(190, 0, 0,.8);
+        
+        &:focus {
+          outline: 0;
+          outline: thin dotted \9; /* IE6-9 */
+          .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(190, 0, 0,.6)");
+        }
+    }
+
+
+    input.sitetreeurlsegment {
+        width: 200px
+    }
+    input[disabled] {
+        background-color: #f7f7f7;
+        border: 1px solid #dad9d9;
+    }
+    .creditCardField input,
+    input.currency {
+        padding: 5px 10px;
+        width: 50px;
+    }
+    input.numeric {
+        padding: 5px 10px;
+        width: 50px;
+    }
+    input.checkbox,
+    input.radio {
+        margin-top: 2px
+    }
+    input:invalid,
+    textarea:invalid {
+        .border-radius(1px);
+        .box-shadow(0px 0px 5px red);
+    }
+    span.readonly {
+        font-size: 16px
+    }
+    #DMYDate-month,
+    #DMYDate-day {
+        width: 25px
+    }
+
+
+    /*  */
+    p.checkbox {
+        input {
+            float: left;
+            margin: 2px 6px 0 0;
+        }
+        label {
+            display: inline;
+            margin-top: 0;
+        }
+    }
+
+    .listbox option {
+        padding: 3px 0
+    }
+
+
+    /* Align the action button to the right */
+    .Actions {
+        text-align: right;
+        .action {
+            .btn;
+            .btn-primary;
+        }
+    }
+
+}
+
+.no-boxshadow input:invalid,
+.no-boxshadow textarea:invalid {
+    background-color: #f0dddd
+}
+.ui-widget {
+    font-family: Arial, Helvetica, sans-serif;
+
+    input,
+    select,
+    textarea,
+    button {
+        font-family: Arial, Helvetica, sans-serif !important
+    }
+}
+
+
+/* ERROR MESSAGES 
+***********************/
+span.required,
+label.error {
+    display: block;
+    clear: both;
+    padding: 5px 10px;
+    color: #be0000;
+    font-weight: bold;
+    border: none;
+}
+
+/* SECURITY PAGE 
+***********************/
+#MemberLoginForm_LoginForm_action_dologin,
+.Actions .action {
+    padding: 6px 20px
+}
+#MemberLoginForm_LoginForm,
+#MemberLoginForm_LostPasswordForm {
+    max-width: 500px
+}
+#ForgotPassword a {
+    margin-top: 15px
+}
+#ForgotPassword {
+    margin-top: 6px
+}
+
+// Print
+// ------------------------
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        filter: none !important;
+        -ms-filter: none !important;
+    }
+    .header,
+    .footer {
+        display: none;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+}

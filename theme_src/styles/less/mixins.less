@@ -1,0 +1,203 @@
+// -----------------------------
+//
+// Mixins.less by Carbon Crayon 
+// 
+// -----------------------------
+
+// Font sizes in rem units with a px fallback for old ie 
+// -----------------------------------------------
+.font-size(@font: 16, @line-height: false) {
+	@font-size: unit(@font); // Strip unit(s)
+	@fontRem: (@font / 10);
+
+	font-size: unit(@font-size, px);
+	font-size: unit(@fontRem, rem);
+
+	& when (isnumber(@line-height)){
+    .line-height(@line-height);
+	}
+}
+
+// Line heights in rem units with a px fallback
+// -----------------------------------------------
+.line-height(@line){
+    @lineRem: (@fontRem * @line);
+    line-height: @line;
+    line-height: unit(@lineRem, rem);
+}
+
+/**
+ * Mobile first font sizing
+ *
+ * A ratio of 1 will produce a linear scale
+ *
+ * @size Initial font size on smallest display
+ * @ratio Relationship of font sizes: Defaults to the golden ratio
+ * @skew Rate at which the font size increases
+ */
+.font-size-responsive(@font-size, @skew: 1, @ratio: 1.618){
+
+  @size: unit(@font-size); // Strip units
+
+  font-size: 1px * @size + round(pow(0, @ratio)*@skew);
+  font-size: 0.1rem * (@size + round(pow(0, @ratio)*@skew));
+
+  @media @query-screen-xs-min{
+    font-size: 1px * @size + round(pow(1, @ratio)*@skew);
+    font-size: 0.1rem * (@size + round(pow(1, @ratio)*@skew));
+  }
+  @media @query-screen-sm-min{
+    font-size: 1px * @size + round(pow(2, @ratio)*@skew);
+    font-size: 0.1rem * (@size + round(pow(2, @ratio)*@skew));
+  }
+  @media @query-screen-md-min{
+    font-size: 1px * @size + round(pow(3, @ratio)*@skew);
+    font-size: 0.1rem * (@size + round(pow(3, @ratio)*@skew));
+  }
+  @media @query-screen-lg-min{
+    font-size: 1px * @size + round(pow(4, @ratio)*@skew);
+    font-size: 0.1rem * (@size + round(pow(4, @ratio)*@skew));
+  }
+}
+
+// Border Radii with prefixes
+// -----------------------------------------------
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.border-left-radius(@radius){
+	-webkit-border-top-left-radius: @radius;
+	-webkit-border-bottom-left-radius: @radius;
+	-moz-border-radius-topleft: @radius;
+	-moz-border-radius-bottomleft: @radius;
+	border-top-left-radius: @radius;
+	border-bottom-left-radius: @radius;
+}
+
+.border-right-radius(@radius){
+	-webkit-border-top-right-radius: @radius;
+	-webkit-border-bottom-right-radius: @radius;
+	-moz-border-radius-topright: @radius;
+	-moz-border-radius-bottomright: @radius;
+	border-top-right-radius: @radius;
+	border-bottom-right-radius: @radius;
+}
+
+.border-top-radius(@radius){
+	-webkit-border-top-right-radius: @radius;
+	-webkit-border-top-left-radius: @radius;
+	-moz-border-radius-topright: @radius;
+	-moz-border-radius-topleft: @radius;
+	border-top-right-radius: @radius;
+	border-top-left-radius: @radius;
+}
+
+.border-bottom-radius(@radius){
+	-webkit-border-bottom-right-radius: @radius;
+	-webkit-border-bottom-left-radius: @radius;
+	-moz-border-radius-bottomright: @radius;
+	-moz-border-radius-bottomleft: @radius;
+	border-bottom-right-radius: @radius;
+	border-bottom-left-radius: @radius;
+}
+
+// Absolute center a block level element
+// -----------------------------------------------
+.center-block(){
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+
+// Maintain aspect ratio 
+// -----------------------------------------------
+.aspect-ratio(@x, @y){
+  &:before{
+    content: "";
+    display:block;
+    padding-top: percentage((@y/@x));
+  }
+}
+
+/**
+ * Stretch background full width beyond container
+ *
+ * @extend Direction to extend background. Accepts either 'right', 'left', or 'both'. Defaults to 'both'
+ */
+.background-full-width(@extend:both){
+  position:relative;
+  
+  &:before,
+  &:after{
+    background-color: inherit;
+    bottom:0;
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    width:100%;
+  }
+  & when (@extend = both){
+    &:before{
+      right:100%;
+    }
+    &:after{
+      left:100%;
+    }
+  }
+  & when (@extend = left){
+	&:before{
+		right:100%;
+	}
+    &:after{
+    	width:0;
+    }
+  }
+  & when (@extend = right){
+    &:before{
+    	width:0;
+    }
+    &:after{
+      left:100%;
+    }
+  }
+}
+
+// Background Grey
+// -----------------------------------------------
+.background-color-grey(@value){
+
+	& when (ispercentage(@value)){
+		background-color: hsl(0, 0%, @value);
+	}
+
+	& when not (ispercentage(@value)){
+		background-color: hsl(0, 0%, percentage(@value/100));
+	}
+}
+
+// Color Grey
+// -----------------------------------------------
+.color-grey(@value){
+
+	& when (ispercentage(@value)){
+		color: hsl(0, 0%, @value);
+	}
+
+	& when not (ispercentage(@value)){
+		color: hsl(0, 0%, percentage(@value/100));
+	}
+}
+
+// Text Outline
+// -----------------------------------------------
+.text-outline(@color){
+  -webkit-text-stroke: 1px @color;
+  text-shadow: -1px -1px 0 @color, 1px -1px 0 @color, -1px 1px 0 @color, 1px 1px 0 @color;
+}

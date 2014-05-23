@@ -1,0 +1,93 @@
+//
+// Variables.less by Carbon Crayon
+// 
+// Provide overrides for default Bootstrap variables
+// --------------------------------------------------
+
+
+// Media Queries
+// -------------------------
+
+// Breakpoints - Override breakpoints with equivalent em values
+@screen-xs-min: unit((@screen-xs/16), em);
+@screen-sm-min: unit((@screen-sm/16), em);
+@screen-md-min: unit((@screen-md/16), em);
+@screen-lg-min: unit((@screen-lg/16), em);
+
+@screen-xs-max: unit(((@screen-sm - 1)/16), em);
+@screen-sm-max: unit(((@screen-md - 1)/16), em);
+@screen-md-max: unit(((@screen-lg - 1)/16), em);
+
+// Shorthand media quieries
+@query-xs-min: ~"(min-width: @{screen-xs-min})";
+@query-sm-min: ~"(min-width: @{screen-sm-min})";
+@query-md-min: ~"(min-width: @{screen-md-min})";
+@query-lg-min: ~"(min-width: @{screen-lg-min})";
+
+@query-screen-xs-min: ~"screen and (min-width: @{screen-xs-min})";
+@query-screen-sm-min: ~"screen and (min-width: @{screen-sm-min})";
+@query-screen-md-min: ~"screen and (min-width: @{screen-md-min})";
+@query-screen-lg-min: ~"screen and (min-width: @{screen-lg-min})";
+
+@query-screen-xs-max: ~"screen and (max-width: @{screen-xs-max})";
+@query-screen-sm-max: ~"screen and (max-width: @{screen-sm-max})";
+@query-screen-md-max: ~"screen and (max-width: @{screen-md-max})";
+
+// Brand colors
+// -------------------------
+
+@brand-primary:         #428bca;
+@brand-success:         #5cb85c;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
+@brand-info:            #5bc0de;
+
+// Scaffolding
+// -------------------------
+@body-bg:               #fff;
+
+// Text Colors
+// -------------------------
+@text-color:            @gray-dark;
+
+@link-color:            @brand-primary;
+@link-hover-color:      darken(@link-color, 15%);
+
+// Typography
+// -------------------------
+
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          14px;
+@font-size-large:         ceil(@font-size-base * 1.25); // ~18px
+@font-size-small:         ceil(@font-size-base * 0.85); // ~12px
+
+@font-size-h1:            floor(@font-size-base * 3.6); 	// ~36px
+@font-size-h2:            floor(@font-size-base * 2.6); 	// ~26px
+@font-size-h3:            ceil(@font-size-base * 1.7); 		// ~17px
+@font-size-h4:            ceil(@font-size-base * 1.25); 	// ~13px
+@font-size-h5:            @font-size-base; 					// ~10px
+@font-size-h6:            ceil(@font-size-base * 0.85); 	// ~9px
+
+@line-height-base:        1.428571429; // 20/14
+@line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
+
+@headings-font-family:    @font-family-base;
+@headings-font-weight:    500;
+@headings-line-height:    1.1;
+
+
+// Iconography
+// -------------------------
+//## Specify custom locations of the include Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+@icon-font-path:          "../fonts/";
+@icon-font-name:          "icomoon";
+@icon-font-svg-id:        "icomoon";
+
+// Sticky Footer
+// -------------------------
+@footer-height: 		18em;
