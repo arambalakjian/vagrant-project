@@ -1,0 +1,36 @@
+{
+  "name": "base",
+  "version": "0.0.0",
+  "description": "A Carbon Crayon SilverStripe base theme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carboncrayon/base-ss.git"
+  },
+  "author": "Carbon Crayon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carboncrayon/base-ss/issues"
+  },
+  "homepage": "https://github.com/carboncrayon/base-ss",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-imagemin": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-less": "^0.11.0",
+    "grunt-banner": "^0.2.2",
+    "grunt-newer": "^0.7.0",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-notify": "^0.3.0",
+    "grunt-coffeelint": "0.0.10",
+    "matchdep": "^0.3.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-copy": "^0.5.0"
+  }
+}
