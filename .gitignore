@@ -4,7 +4,6 @@
 /public_html/assets/_combinedfiles
 /public_html/themes/[THEME]/combinedfiles
 /public_html/silverstripe-cache
-
 /public_html/cms
 /public_html/framework
 /public_html/googlesitemaps
@@ -12,6 +11,8 @@
 /public_html/gridfieldextensions
 /public_html/dataobjectaspage
 /public_html/silverstripe-utils
+/bower_components
+/node_modules
 
 # Ignore these files in Assets #
 /public_html/assets/*.jpg
