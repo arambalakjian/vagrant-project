@@ -12,6 +12,8 @@ echo "Composer installed"
 echo "Installing git due to composer dependency"
 apt-get install -y git
 
+VHOST_FILES=/vagrant/vhosts/*
+
 for file in $VHOST_FILES
 do
 	FILENAME=$(basename "$file")
