@@ -1,0 +1,14 @@
+{
+  "name": "base",
+  "version": "0.0.0",
+  "homepage": "https://github.com/carboncrayon/base-ss",
+  "authors": [
+    "Matthew Hadwen <matthewhadwen@gmail.com>"
+  ],
+  "description": "A Carbon Crayon SilverStripe base theme",
+  "license": "MIT",
+  "devDependencies": {
+    "bootstrap": "~3.1.1",
+    "modernizr": "~2.8.1"
+  }
+}
