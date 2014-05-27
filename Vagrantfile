@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
   #config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
   #config.vm.network :forwarded_port, guest: 443, host: 443, auto_correct: true
   #config.vm.network :forwarded_port, guest: 3306, host: 3306, auto_correct: true
+  config.vm.network :forwarded_port, guest: 35729, host: 35729, auto_correct: true # LiveReload
   config.vm.network "private_network", ip: "192.168.33.10"
 
   #Uncomment this if you want bridged network functionality
