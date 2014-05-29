@@ -14,6 +14,9 @@
 /bower_components
 /node_modules
 
+# Ignore vagrant files
+.vagrant
+
 # Ignore these files in Assets #
 /public_html/assets/*.jpg
 /public_html/assets/*.jpeg
