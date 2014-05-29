@@ -17,7 +17,7 @@
 # Ignore these files in Assets #
 /public_html/assets/*.jpg
 /public_html/assets/*.jpeg
-/assets/*.png
+/public_html/assets/*.png
 /public_html/assets/*.gif
 /public_html/assets/*.html
 
