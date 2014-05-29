@@ -25,10 +25,10 @@ do ($ = jQuery) ->
   # Used to clear the search form text
   ###
   $.fn.clearField = ->
-    onFocus ->
+    onFocus = ->
       this.value = '' if this.defaultValue is this.value
       return
-    onBlur ->
+    onBlur = ->
       this.value = this.defaultValue if not this.value.length
       return
     this.focus(onFocus).blur(onBlur)
