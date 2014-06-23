@@ -13,6 +13,7 @@
 /public_html/silverstripe-utils
 /bower_components
 /node_modules
+_ss_environment.php
 
 # Ignore vagrant files
 .vagrant

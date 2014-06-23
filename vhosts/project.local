@@ -1,13 +1,13 @@
 <VirtualHost *:80>
 	ServerAdmin webmaster@localhost
-	ServerName vagranttest.local
+	ServerName PROJECT.local
 
-	DocumentRoot /var/www/vagranttest.local/public_html
+	DocumentRoot /var/www/PROJECT.local/public_html
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride All
 	</Directory>
-	<Directory /var/www/vagranttest.local/public_html>
+	<Directory /var/www/PROJECT.local/public_html>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride All
 		Order allow,deny
