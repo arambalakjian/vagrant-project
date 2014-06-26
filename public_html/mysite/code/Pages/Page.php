@@ -12,6 +12,7 @@
 class Page extends SiteTree {
 	
 	private static $db = array(
+		'Intro' => 'Varchar(255)',
 		'ShowInFooter' => 'Boolean'	
 	);
 	
@@ -20,11 +21,20 @@ class Page extends SiteTree {
 		$fields = parent::getCMSFields();
 	
 		//Fields 
-		$fields->addFieldToTab('Root.Main', new CheckboxField('ShowInFooter', 'Show in footer menu?'), 'Content');	
+		$fields->addFieldToTab('Root.Main', new TextField('Intro', 'Page intro'), 'Content');	
 	
 		return $fields;	
 	}
 
+	public function getSettingsFields() 
+	{
+		$fields = parent::getSettingsFields();
+	
+		//Fields
+		$fields->addFieldToTab('Root.Main', new CheckboxField('ShowInFooter', 'Show in footer menu?'), 'ShowInSearch');
+
+		return $fields;
+	}
 	/* Generate a list for the dropdown e.g.
 	 * 	ClassName = The class of items in the dropdown
 	 *  $TitleField = The Field used for the option title
