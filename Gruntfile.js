@@ -145,13 +145,8 @@ module.exports = function (grunt) {
 				options: {
 					banner: '<%= banner %>'
 				},
-
-				/**
-				 * List scripts to combine
-				 */
-				src: [
-					'<%= config.src.scripts.javascript.path %>/functions.js',
-					'<%= config.src.scripts.javascript.path %>/app.js'
+				src: [ /* No guarantee of concat order */
+					'<%= config.src.scripts.javascript.path %>/*.js'
 				],
 
 				dest: '<%= config.dest.scripts.path %>/<%= pkg.name %>.js'
@@ -327,7 +322,7 @@ module.exports = function (grunt) {
 		'coffeelint', 
 		'coffee', 
 		'jshint:pre_concat', 
-		'concat', 
+		'concat',
 		'uglify', 
 		'less', 
 		'htmlmin', 
