@@ -12,10 +12,10 @@ class StyleGuide_Controller extends Page_Controller
 		parent::init();
 	}
 	/**
-	 * view the styles 
-	 * 
+	 * view the styles
+	 *
 	 * @return String
-	 */	
+	 */
 	public function view()
 	{
 		return $this->renderWith('StyleGuide');
