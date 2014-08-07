@@ -1,0 +1,6 @@
+---
+Name: URL Routes
+---
+Director:
+  rules:
+    'styles' : 'StyleGuide_Controller'
