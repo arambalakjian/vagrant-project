@@ -66,7 +66,7 @@ class Page_Controller extends ContentController
 		parent::init();
 		
         //Set our theme's CSS folder
-        $themeFolder = $this->ThemeDir();
+        $themeFolder = project();
   
         //Set the folder to our theme so that relative image paths work
         Requirements::set_combined_files_folder($themeFolder . '/combinedfiles');
